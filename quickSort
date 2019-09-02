@@ -1,0 +1,22 @@
+    private static int[] quickSort(int[] datos, int min, int max ){
+        int aux;
+        int indIz = min;
+        int base = datos[min];
+        for (int i = min +1 ; i < max; i++){
+            if(datos[i] <= base){
+               aux = datos[indIz +1];
+               datos[indIz] = datos[i]; 
+               datos[i] = aux;
+               datos[indIz +1] = base;
+               indIz++;
+            }
+            datos = quickSort(datos, min, indIz -1);
+            datos= quickSort(datos, indIz + 1, max);
+    
+        }
+            
+        return datos;
+    }
+    public static int[] quickSort(int[] datos){
+        return quickSort(datos, 0, datos.length -1);
+    }
