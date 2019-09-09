@@ -1,0 +1,7 @@
+public clase linkedBT <T> implements BinaryTreeADT<T>{
+    private NodoBT <T> raiz;
+    private int cont;
+    public int size(){
+        return cont;
+    }
+}
